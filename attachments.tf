@@ -14,7 +14,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "this_vpc0" {
 
   tags = merge(
     {
-      Name = format("%s-%s", var.name)
+      Name = format("%s-%s", var.name, var.vpc_attachments["vpc0"].name)
     },
     var.tags
   )
@@ -36,7 +36,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "this_vpc1" {
 
   tags = merge(
     {
-      Name = format("%s-%s", var.name)
+      Name = format("%s-%s", var.name, var.vpc_attachments["vpc1"].name)
     },
     var.tags
   )
@@ -58,7 +58,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "this_vpc2" {
 
   tags = merge(
     {
-      Name = format("%s-%s", var.name)
+      Name = format("%s-%s", var.name, var.vpc_attachments["vpc2"].name)
     },
     var.tags
   )
@@ -80,7 +80,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "this_vpc3" {
 
   tags = merge(
     {
-      Name = format("%s-%s", var.name)
+      Name = format("%s-%s", var.name, var.vpc_attachments["vpc3"].name)
     },
     var.tags
   )
@@ -102,7 +102,7 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "this_vpc4" {
 
   tags = merge(
     {
-      Name = format("%s-%s", var.name)
+      Name = format("%s-%s", var.name, var.vpc_attachments["vpc4"].name)
     },
     var.tags
   )
@@ -124,13 +124,8 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "this_vpc5" {
 
   tags = merge(
     {
-      Name = format("%s-%s", var.name)
+      Name = format("%s-%s", var.name, var.vpc_attachments["vpc5"].name)
     },
     var.tags
   )
 }
-
-
-
-
-
