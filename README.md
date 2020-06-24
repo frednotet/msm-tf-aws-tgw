@@ -2,6 +2,8 @@
 
 A Terraform module for setting up a Transit Gateway on AWS. Due to limitations, the module is NOT dynamic and supports the special requirements for one personal project: msm.
 
+Note that this module assumes the RAM Sharing with AWS Organizations is enabled.
+
 ## Usage
 
 
