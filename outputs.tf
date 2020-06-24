@@ -13,3 +13,10 @@ output "this_ec2_transit_gateway_owner_id" {
   description = "Identifier of the AWS account that owns the EC2 Transit Gateway"
   value       = element(concat(aws_ec2_transit_gateway.this.*.owner_id, [""]), 0)
 }
+
+
+// aws_ram_resource_share
+output "this_ram_resource_share_id" {
+  description = "The Amazon Resource Name (ARN) of the resource share"
+  value       = element(concat(aws_ram_resource_share.this.*.id, [""]), 0)
+}
