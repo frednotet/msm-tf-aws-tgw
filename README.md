@@ -4,6 +4,8 @@ A Terraform module for setting up a Transit Gateway on AWS. Due to limitations, 
 
 Note that this module assumes the RAM Sharing with AWS Organizations is enabled.
 
+Also, the TGW could take a little bit of time before being shared. This may lead to this error: `Error: error creating EC2 Transit Gateway VPC Attachment`. Just retry when the sharing is validated.
+
 ## Usage
 
 
