@@ -26,10 +26,20 @@ resource "aws_ram_principal_association" "this_vpc1" {
   resource_share_arn = aws_ram_resource_share.this.arn
 }
 
+resource "aws_ram_resource_share_accepter" "receiver1_accept" {
+  provider = "aws.vpc1"
+  share_arn = aws_ram_principal_association.this_vpc1.resource_share_arn
+}
+
 resource "aws_ram_principal_association" "this_vpc2" {
 
   principal          = var.vpc_attachments["vpc2"].account_id
   resource_share_arn = aws_ram_resource_share.this.arn
+}
+
+resource "aws_ram_resource_share_accepter" "receiver2_accept" {
+  provider = "aws.vpc2"
+  share_arn = aws_ram_principal_association.this_vpc2.resource_share_arn
 }
 
 resource "aws_ram_principal_association" "this_vpc3" {
@@ -38,14 +48,29 @@ resource "aws_ram_principal_association" "this_vpc3" {
   resource_share_arn = aws_ram_resource_share.this.arn
 }
 
+resource "aws_ram_resource_share_accepter" "receiver3_accept" {
+  provider = "aws.vpc3"
+  share_arn = aws_ram_principal_association.this_vpc3.resource_share_arn
+}
+
 resource "aws_ram_principal_association" "this_vpc4" {
 
   principal          = var.vpc_attachments["vpc4"].account_id
   resource_share_arn = aws_ram_resource_share.this.arn
 }
 
+resource "aws_ram_resource_share_accepter" "receiver4_accept" {
+  provider = "aws.vpc4"
+  share_arn = aws_ram_principal_association.this_vpc4.resource_share_arn
+}
+
 resource "aws_ram_principal_association" "this_vpc5" {
 
   principal          = var.vpc_attachments["vpc5"].account_id
   resource_share_arn = aws_ram_resource_share.this.arn
+}
+
+resource "aws_ram_resource_share_accepter" "receiver5_accept" {
+  provider = "aws.vpc5"
+  share_arn = aws_ram_principal_association.this_vpc5.resource_share_arn
 }
